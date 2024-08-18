@@ -9,6 +9,10 @@ Also, you should also have the following CRT, KEY, and PEM ACME certificates alr
 working with your domain.
 
 ---
+### `docker compose up` and check `http://whoami.example.com` and `http://hello.example.com`
+#### automatic redirect to `https://`
+---
+---
 ### Add the `sozu` bin manually 
 ---
 `config.toml` replace `example.com` with your domain
