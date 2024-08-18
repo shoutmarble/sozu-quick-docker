@@ -1,0 +1,15 @@
+HTTP/1.1 408 Request Timeout
+Content-Type: text/html
+Cache-Control: no-cache
+Connection: close
+Sozu-Id: %REQUEST_ID
+
+<style>pre{background:#EEE;padding:10px;border:1px solid #AAA;border-radius: 5px;}</style>
+<h1>408 Request Timeout</h1>
+<pre>
+route: %ROUTE
+request_id: %REQUEST_ID
+</pre>
+
+<p>Request timed out after %DURATION.</p>
+<footer>This is an automatic answer by Sozu.</footer>

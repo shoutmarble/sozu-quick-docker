@@ -1,0 +1,55 @@
+
+networks:
+    sozu-network:
+        name: "sozu-network"
+        driver: bridge
+        ipam:
+            driver: default
+            config:
+            - subnet: "192.168.168.0/24"
+              gateway: "192.168.168.1"
+
+
+services:
+    sozu:
+        image: sozu/sozu:123
+        build:
+            context: .
+            dockerfile: ubuntu-sozu-docker
+        ports:
+          - 80:80
+          - 443:443
+        networks:
+            sozu-network:
+                ipv4_address: 192.168.168.100
+        volumes:
+          - ./config.toml:/etc/sozu/config.toml
+          - ./sozu-html-errors/:/sozu-html-errors/
+          - ./certificates/example.com.crt:/certs/server.crt:ro
+          - ./certificates/example.com.key:/certs/server.key:ro
+          - ./certificates/example.com.pem:/certs/server.pem:ro
+
+
+    whoami:
+        image: traefik/whoami
+        container_name: whoami
+        hostname: whoami
+        restart: unless-stopped
+        ports:
+            - 8080:80
+        networks:
+            sozu-network:
+                ipv4_address: 192.168.168.230
+
+
+
+    hello:
+        image: crccheck/hello-world
+        container_name: hello
+        hostname: hello
+        restart: unless-stopped
+        ports:
+            - 8800:8000
+        networks:
+            sozu-network:
+                ipv4_address: 192.168.168.240

@@ -1,0 +1,17 @@
+HTTP/1.1 507 Insufficient Storage
+Cache-Control: no-cache
+Connection: close
+Sozu-Id: %REQUEST_ID
+
+<h1>507 Insufficient Storage</h1>
+<pre>
+	route: %ROUTE
+	request_id: %REQUEST_ID
+	cluster_id: %CLUSTER_ID
+	backend_id: %BACKEND_ID
+</pre>
+
+<p>Response needed more than %CAPACITY bytes to fit. Parser stopped at phase: %PHASE.</p>
+<p>Diagnostic: %MESSAGE/p>
+<footer>This is an automatic answer by Sozu.</footer>
+

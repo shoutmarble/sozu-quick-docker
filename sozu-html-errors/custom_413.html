@@ -1,0 +1,14 @@
+HTTP/1.1 413 Content Too Large
+Cache-Control: no-cache
+Connection: close
+Sozu-Id: %REQUEST_ID
+
+<style>pre{background:#EEE;padding:10px;border:1px solid #AAA;border-radius: 5px;}</style>
+<h1>413 Payload Too Large</h1>
+<pre>
+	route: %ROUTE
+	request_id: %REQUEST_ID
+</pre>
+<p>Request needed more than %CAPACITY bytes to fit. Parser stopped at phase: %PHASE.</p>
+<p>Diagnostic: %MESSAGE</p>
+<footer>This is an automatic answer by Sozu.</footer>

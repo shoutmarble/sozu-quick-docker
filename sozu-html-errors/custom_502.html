@@ -1,0 +1,20 @@
+HTTP/1.1 502 Bad Gateway
+Cache-Control: no-cache
+Connection: close
+Sozu-Id: %REQUEST_ID
+
+<style>pre{background:#EEE;padding:10px;border:1px solid #AAA;border-radius: 5px;}</style>
+<h1>502 Bad Gateway</h1>
+
+<pre>
+	route: %ROUTE
+	request_id: %REQUEST_ID
+	cluster_id: %CLUSTER_ID
+	backend_id: %BACKEND_ID
+</pre>
+
+<p>Response could not be parsed. Parser stopped at phase: %PHASE.</p>
+<p>Diagnostic: %MESSAGE</p>
+<p>Further details:</p>
+<pre>%DETAILS</pre>
+<footer>This is an automatic answer by Sozu.</footer>

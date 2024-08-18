@@ -1,0 +1,16 @@
+HTTP/1.1 503 Service Unavailable
+Cache-Control: no-cache
+Connection: close
+Sozu-Id: %REQUEST_ID
+
+<style>pre{background:#EEE;padding:10px;border:1px solid #AAA;border-radius: 5px;}</style>
+<h1>503 Service Unavailable</h1>
+<pre>
+	route: %ROUTE
+	request_id: %REQUEST_ID
+	cluster_id: %CLUSTER_ID
+	backend_id: %BACKEND_ID
+</pre>
+<p>Diagnostic: %MESSAGE</p>
+<footer>This is an automatic answer by Sozu.</footer>
+

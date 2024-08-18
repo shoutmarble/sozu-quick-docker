@@ -1,0 +1,17 @@
+FROM ubuntu:latest
+
+EXPOSE 80
+EXPOSE 443
+
+RUN mkdir -p /usr/local/bin
+RUN mkdir -p /etc/sozu
+
+RUN mkdir -p /var/lib/sozu/
+RUN mkdir -p /run/sozu/
+
+COPY ./sozu /usr/local/bin/
+COPY ./config.toml /etc/sozu/
+
+ENTRYPOINT ["/usr/local/bin/sozu"]
+CMD ["start", "-c", "/etc/sozu/config.toml"]
+# CMD ["start", "-c", "/bin/bash"]
