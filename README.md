@@ -6,7 +6,7 @@ This is an example of sozu using docker-compose.
 It is intended to run on a VPS server setup to use A/AAAA wild-card sub-domains.
 
 Also, you should also have the following CRT, KEY, and PEM ACME certificates already
-working with your domain.
+working for your domain.
 
 ---
 ### `docker compose up` and check `http://whoami.example.com` and `http://hello.example.com`
